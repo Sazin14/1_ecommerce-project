@@ -4,6 +4,9 @@ const app = express()
 const cookieParser = require("cookie-parser");
 const path = require('path');
 
+const db = require("./config/mongoose-connection");
+
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());

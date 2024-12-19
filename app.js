@@ -6,8 +6,8 @@ const path = require('path');
 
 const db = require("./config/mongoose-connection");
 const ownersRouter = require("./routes/ownersRouter");
-const usersRouter = require("./routs/usersRouter");
-const productsRouter = require("./routs/productsRouter");
+const usersRouter = require("./routes/usersRouter");
+const productsRouter = require("./routes/productsRouter");
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}));
@@ -19,4 +19,4 @@ app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
-app.listen(3000)
+app.listen(7000)

@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const path = require('path');
 
 const db = require("./config/mongoose-connection");
+const indexRouter = require("./routes/indexRouter");
 const ownersRouter = require("./routes/ownersRouter");
 const usersRouter = require("./routes/usersRouter");
 const productsRouter = require("./routes/productsRouter");
@@ -15,8 +16,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.set('viewengine', 'ejs');
 
+app.use("/",indexRouter);
 app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
-app.listen(7000)
+app.listen(3000)

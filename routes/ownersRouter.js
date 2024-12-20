@@ -3,7 +3,7 @@ const router = express.Router();
 const ownerModel = require("../models/owner-model")
 
 if(process.env.NODE_ENV === "development"){
-    router.post('/create', async (req, res)=>{
+    router.get('/create', async (req, res)=>{
         let owner = await ownerModel.find();
         if (owner.length > 0){
             return res
